@@ -1,0 +1,83 @@
+.container-dok {
+  height: 100vh;
+  background: #6ca0c2;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 20px;
+  
+}
+.foto {
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+.grid > .foto {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.grid > .foto :hover {
+  transform: rotate(10deg);
+}
+
+
+
+.ul-playlist {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: black;
+  height: 15%;
+  justify-content: center;
+}
+.teks-playlist {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.container-playlist {
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.teks-ply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-ply {
+  height: 100vh;
+  width: 100vh;
+  background: #ffffff;
+   justify-content: center;
+  align-items: center;
+}
+.grid-ply {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 20px;
+}
+.ply {
+  display: flex;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+.ply-inti>.ply {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
