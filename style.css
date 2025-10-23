@@ -213,3 +213,21 @@ html {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+/* ABOUT WE */
+.about-we {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 2rem;
+  color: #000000;
+} 
+
+.teks-isi {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+  color: #000000;
+}
