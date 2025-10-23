@@ -228,6 +228,12 @@ html {
   margin-top: 2rem;
   margin-left: 4rem;
   margin-right: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+.teks-isi2 {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 1rem;
   color: #000000;
 }
