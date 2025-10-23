@@ -27,13 +27,14 @@ html {
   font-size: 15px;
 }
 .li-navbar:hover {
-  background-color: rgb(rgb(59, 116, 147));
-  transition: 0.5s ease-in-out;
+  background-color: rgb(59, 116, 147);
+  transition: 0.3s ease-in-out;
   transition-delay: 0.3s;
-  border-radius: 0.3px;
+  border-radius: 7px;
+  cursor: pointer;
 }
-.a-navbar {
-  color: white;
+.a-navbar{
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-weight: 500;
 }
@@ -68,13 +69,13 @@ html {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  width: 50%;
-  height: 50%;
+  width: 270px;
+  height: 270px;
 }
 
 /* FOOTER */
 .container-footer {
-  height: 5vh;
+  height: 6vh;
   background-color: rgb(30, 100, 157);
   display: flex;
   justify-content: center;
@@ -87,7 +88,7 @@ html {
 
 /* DOKUMENTASI */
 .ul-dokum {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial;
   color: rgb(0, 0, 0);
   height: 10%;
   justify-content: center;
@@ -171,7 +172,6 @@ html {
   grid-gap: 20px; 
 }
 
-
 /* Spotify */
 .spotify {
   text-decoration: none;
@@ -187,14 +187,14 @@ html {
   color: black;
 }
 
-/* MONOLOG */
-.container-monolog {
+/* ISI LAGU */
+.container-vidio {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.grid-monolog{
+.grid-vidio{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   margin: 0px;
@@ -202,292 +202,12 @@ html {
   justify-content: center;
   grid-gap: 20px;
 }
-.border-monolog {
+.border-vidio {
   object-fit: cover;
   width: 300px;
   height: 300px;
 }
-.border-monolog > .vidio-monolog {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* About You */
-.container-about-you {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-about-you{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-about-you {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-about-you > .vidio-about-you {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* AKU MILIKMU */
-.container-aku-milikmu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-aku-milikmu{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-aku-milikmu {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-aku-milikmu > .vidio-aku-milikmu {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* Kasih Putih */
-.container-kasih-putih {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-kasih-putih{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-kasih-putih {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-kasih-putih > .vidio-kasih-putih {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* Membasuh */
-.container-membasuh {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-membasuh{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-membasuh {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-membasuh > .vidio-membasuh {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* BSS */
-.container-bss {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-bss{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-bss{
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-bss > .vidio-bss {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* To The Bone */
-.container-to-the-bone {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-to-the-bone{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-to-the-bone{
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-to-the-bone > .vidio-to-the-bone {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* Pemuja Rahasia */
-.container-pemuja-rahasia{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-pemuja-rahasia{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-pemuja-rahasia{
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-pemuja-rahasia > .vidio-pemuja-rahasia {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* Kenangan Manis */
-.container-kenangan-manis{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-kenangan-manis{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-kenangan-manis{
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-kenangan-manis > .vidio-kenangan-manis {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* Hati-Hati Di Jalan */
-.container-jalan{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-jalan{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-jalan{
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-jalan > .vidio-jalan {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-/* Berpayung Tuhan */
-.container-berpayung{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.grid-berpayung{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  margin: 0px;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 20px;
-}
-
-.border-berpayung{
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-}
-.border-berpayung> .vidio-berpayung{
+.border-vidio {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
