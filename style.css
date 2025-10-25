@@ -83,6 +83,7 @@ html {
 }
 .h-footer {
   font-size: 15px;
+  font-family: sans-serif;
   color: white;
 }
 
@@ -125,6 +126,15 @@ html {
 }
 
 /* PLAYLIST */
+.judul-ply {
+  margin-top: 3rem;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: larger;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .row {
   text-align: center;
 }
@@ -134,23 +144,27 @@ html {
   color: black;
 }
 .row .playnew-img .playnew-title {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .playnew-img {
    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
+.row:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 1); 
+  cursor: pointer;
+}
 .ul-playlist {
   font-family: sans-serif;
   background-color: #ffffff;
   color: black;
-  height: 15%;
+  height: 8%;
   justify-content: center;
 }
 .teks-playlist {
   display: flex;
-  height: 50px;
   justify-content: center;
   align-items: center;
 }
@@ -188,6 +202,33 @@ html {
 }
 
 /* ISI LAGU */
+.back-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.back-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;  /* Ukuran logo diperbesar */
+    height: 50px; /* Tambahkan height agar proporsional */
+    z-index: 1;
+    object-fit: cover;
+    background-color: rgba(255, 255, 255, 0.8); /* Background putih semi-transparan */
+    padding: 10px; /* Padding untuk memberi ruang di sekitar logo */
+    border-radius: 8px; /* Membuat background lingkaran */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan halus */
+    transition: all 0.3s ease; /* Animasi saat hover */
+}
+
+.back-logo:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 1); 
+    cursor: pointer;
+}
+
 .container-vidio {
   display: flex;
   justify-content: center;
@@ -226,8 +267,8 @@ html {
   font-family: Arial;
   text-align: center;
   margin-top: 2rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   margin-bottom: 2rem;
   color: #000000;
 }
@@ -235,5 +276,8 @@ html {
   font-family: Arial;
   text-align: center;
   margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
   color: #000000;
 }
