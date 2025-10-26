@@ -256,6 +256,14 @@ html {
 }
 
 /* ABOUT WE */
+.teks-utama {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
 .teks-about {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
