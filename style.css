@@ -256,28 +256,13 @@ html {
 }
 
 /* ABOUT WE */
-.about-we {
-  font-family: Arial;
+.teks-about {
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin-top: 2rem;
-  color: #000000;
-} 
-
-.teks-isi {
-  font-family: Arial;
-  text-align: center;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-  color: #000000;
+  margin-top: 3rem;
 }
-.teks-isi2 {
-  font-family: Arial;
+.teks-about-2 {
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-  color: #000000;
+  margin-top: 2rem;
 }
