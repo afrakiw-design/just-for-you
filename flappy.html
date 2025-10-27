@@ -1,19 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Flappy Bird - Full</title>
     <link rel="stylesheet" href="flappy.css" />
-  </head>
-  <body>
+</head>
+<body>
+    <div class="back-container">
+        <a href="game.html">
+            <img src="back.png" alt="Back" class="back-logo">
+        </a>
+    </div>
     <div class="wrap">
-      <canvas id="game"></canvas>
-      <div id="ui" class="ui">
-        <div id="msg" class="msg">Klik / Spasi untuk terbang — Tekan R untuk mulai ulang</div>
-        <div id="score" class="score">Skor: 0</div>
-      </div>
+        <canvas id="game"></canvas>
+        <div id="ui" class="ui">
+            <div id="msg" class="msg">Klik / Spasi untuk terbang — Tekan R untuk mulai ulang</div>
+            <div id="score" class="score">Skor: 0</div>
+        </div>
     </div>
     <script src="flappy.js"></script>
-  </body>
+</body>
 </html>
