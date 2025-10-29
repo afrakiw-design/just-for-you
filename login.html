@@ -1,0 +1,35 @@
+
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background: url(pexels-therato-1933320.jpg);">
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Haiii Broo</h2>
+            <form id="loginForm" onsubmit="return validatePassword()">
+                <input type="password" id="passwordInput" placeholder="Enter Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validatePassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === "220610") {
+                window.location.href = "beranda.html";
+                return false;
+            } else {
+                alert("Password salah!");
+                return false;
+            }
+        }
+        if (sessionStorage.getItem('isLoggedIn')) {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

@@ -4,10 +4,11 @@ html {
   padding: 0;
   scroll-behavior: smooth;
 }
-
+body {
+  height: 100vh;
+}
 /* NAVBAR */
 .container-navbar {
-  background-color: #3e64ab;
   width: 100%;
   height: 9vh;
 }
@@ -23,32 +24,67 @@ html {
   list-style-type: none;
   padding: 15px;
   margin: 5px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 15px;
 }
 .li-navbar:hover {
-  background-color: rgb(59, 116, 147);
+  background-color: rgba(0, 0, 0, 0.178);
+  backdrop-filter: blur(10px);
   transition: 0.3s ease-in-out;
   transition-delay: 0.3s;
   border-radius: 7px;
   cursor: pointer;
 }
 .a-navbar{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 500;
+}
+/* NAVBAR2 */
+.container-navbar2 {
+  background-color: rgba(45, 114, 173, 0.763);
+  width: 100%;
+  height: 9vh;
+}
+
+.ul-navbar2 {
+  font-family: Arial;
+  display: flex;
+  height: 65px;
+  justify-content: left;
+  align-items: center;
+}
+.li-navbar2 {
+  list-style-type: none;
+  padding: 15px;
+  margin: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+}
+.li-navbar2:hover {
+  background-color: rgba(255, 255, 255, 0.605);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.3s;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.a-navbar2{
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: 500;
 }
 
 /* CONTENT */
 .container-content {
-  background-color: #6ca0c2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 85vh;
 }
 .a-content {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
   color: black;
   text-decoration: none;
   font-size: 20px;
@@ -59,9 +95,6 @@ html {
   justify-content: center;
   align-items: center;
   border-radius: 80px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .img-content {
   object-fit: cover;
@@ -72,11 +105,13 @@ html {
   width: 270px;
   height: 270px;
 }
+.a-content .img-content {
+  margin-bottom: 16px; /* sesuaikan nilai */
+}
 
 /* FOOTER */
 .container-footer {
   height: 6vh;
-  background-color: rgb(30, 100, 157);
   display: flex;
   justify-content: center;
   align-items: center;
