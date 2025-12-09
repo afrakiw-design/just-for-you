@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kartu Ucapan & Kue Ulang Tahun</title>
+<style>
+  :root{
+    --bg1:#0b2447; --bg2:#4aa3d9; --card:#fff;
+    --accent:#ffd166; --cake1:#f6c2c2; --cake2:#fff5e6;
+    --frost:#ff9fb3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: Inter, system-ui, Arial, sans-serif;
+    background: radial-gradient(circle at 10% 10%, rgba(255,209,102,0.06), transparent 10%),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:#122;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    overflow:hidden;
+  }
+
+  .stage{
+    width:min(980px,95vw);
+    height:min(680px,92vh);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border-radius:18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    position:relative;
+    display:flex;
+    gap:28px;
+    padding:28px;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* left: cake */
+  .left{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    min-width:300px;
+  }
+
+  .cake-wrap{
+    position:relative;
+    width:260px;
+    height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* cake base layers (reduced height & spacing) */
+  .cake {
+    position:relative;
+    width:200px;
+    border-radius:12px;
+    text-align:center;
+  }
+  .layer{
+    margin:0 auto;
+    width:100%;
+    border-radius:12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    position:relative;
+  }
+  .layer.top { height:60px; background: linear-gradient(180deg,var(--frost), #ffd1d8); z-index:4; margin-bottom:6px;}
+  .layer.mid { height:56px; background: linear-gradient(180deg,var(--cake2), #fff9ea); margin-bottom:6px; z-index:3;}
+  .layer.bot { height:70px; background: linear-gradient(180deg,var(--cake1), #ffd6d6); z-index:2;}
+
+  /* icing drips */
+  .drips{
+    position:absolute; left:8%; right:8%; top:-8px; height:26px; z-index:5;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.25) 0 6px, rgba(255,255,255,0.05) 6px 12px);
+    border-radius:8px;
+    opacity:.95;
+  }
+
+  /* candles - centered & slightly lower */
+  .candles{
+    position:absolute;
+    top:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    width:160px;
+    z-index:6;
+  }
+  .candle{
+    width:12px; height:36px; background:linear-gradient(180deg,#fff,#f1f1f1);
+    border-radius:3px; position:relative; box-shadow:0 4px 8px rgba(0,0,0,0.12);
+    display:flex; align-items:flex-start; justify-content:center;
+  }
+  .candle .stripe{position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(255,0,0,0.12) 0 50%, transparent 50%); mix-blend-mode:overlay; opacity:.6}
+  .flame{
+    position:absolute; top:-14px; width:10px; height:14px; background: radial-gradient(circle at 35% 30%, #fff7a4, #ffeb3b 30%, #ff6b6b 70%);
+    border-radius:50% 50% 40% 40% / 60% 60% 40% 40%;
+    filter:drop-shadow(0 6px 8px rgba(255,150,0,0.25));
+    transform-origin:center bottom;
+    animation: flicker 0.14s infinite ease-in-out;
+  }
+  .flame.small{width:8px;height:12px; top:-12px;}
+  @keyframes flicker{
+    0%{transform:scaleY(1) translateY(0) rotate(-6deg); opacity:1}
+    50%{transform:scaleY(1.18) translateY(-2px) rotate(6deg); opacity:.95}
+    100%{transform:scaleY(1) translateY(0) rotate(-6deg); opacity:1}
+  }
+
+  /* plate */
+  .plate{
+    position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:260px; height:24px; background:linear-gradient(180deg,#fff,#f0f0f0); border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    z-index:1;
+  }
+
+  /* sprinkles */
+  .sprinkle{position:absolute;width:6px;height:2px;background:#fff;border-radius:2px;transform:rotate(30deg);opacity:.95}
+
+  /* right: card */
+  .right{
+    width:360px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    perspective:1200px;
+  }
+
+  .card{
+    width:320px;height:220px; position:relative; transform-style:preserve-3d; transition:transform .9s cubic-bezier(.2,.8,.2,1);
+    cursor:pointer;
+  }
+  .card.open{ transform: rotateY(-160deg) translateX(-40px) }
+  .card-face{
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    display:flex; align-items:center; justify-content:center; padding:18px;
+  }
+  .card-front{
+    background: linear-gradient(180deg,#fff,#fffbf1);
+    z-index:2;
+  }
+  .card-front .label{font-weight:700;color:#2b3b4a}
+  .card-back{
+    transform:rotateY(180deg);
+    background: linear-gradient(180deg,#fff7e6,#fff1d6);
+    text-align:left;
+    padding:22px;
+  }
+  .card-back h2{margin-bottom:8px;color:#2b3b4a}
+  .card-back p{color:#3a4a58; line-height:1.45}
+  .card-back .from{margin-top:12px;font-weight:700;color:#264653}
+
+  /* small controls */
+  .controls{
+    position:absolute; left:18px; bottom:18px; display:flex; gap:10px; z-index:50;
+  }
+  .btn{
+    background:var(--card); padding:8px 12px; border-radius:10px; border:none; cursor:pointer; box-shadow:0 6px 14px rgba(0,0,0,0.12);
+    font-weight:700;
+  }
+
+  /* confetti canvas */
+  canvas#confetti{position:absolute; inset:0; pointer-events:none; z-index:0}
+
+  /* responsive tweaks */
+  @media (max-width:880px){
+    .stage{flex-direction:column; padding:18px; height:calc(100vh - 32px)}
+    .right{width:100%; margin-top:14px}
+    .left{min-width:auto}
+    .cake-wrap{width:220px;height:220px}
+    .cake{width:170px}
+    .plate{width:220px}
+    .candles{width:140px; gap:8px}
+  }
+</style>
+</head>
+<body>
+  <div class="stage" role="main">
+    <div class="left">
+      <div class="cake-wrap" aria-hidden="true">
+        <div class="cake" id="cake">
+          <div class="candles" id="candles"></div>
+          <div class="layer top">
+            <div class="drips"></div>
+            <div class="sprinkle" style="left:12%; top:18%; transform:rotate(22deg)"></div>
+            <div class="sprinkle" style="left:28%; top:28%; background:#9be3ff"></div>
+            <div class="sprinkle" style="left:52%; top:16%; background:#ffd166; transform:rotate(-10deg)"></div>
+            <div class="sprinkle" style="left:74%; top:26%; background:#b39cff"></div>
+          </div>
+          <div class="layer mid"></div>
+          <div class="layer bot"></div>
+          <div class="plate"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="card" id="card" title="Klik untuk buka/tutup kartu">
+        <div class="card-face card-front">
+          <div>
+            <div style="font-size:22px; font-weight:800; color:#d65a77">Untukmu</div>
+            <div style="margin-top:8px; color:#6b7280">Klik kartu untuk membuka</div>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div>
+            <h2>Selamat Ulang Tahun!</h2>
+            <p>Semoga hari ini penuh kebahagiaan, tawa, dan kue enak. Semoga semua harapan dan impianmu segera tercapai.</p>
+            <div class="from">— Dari Sahabatmu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls" aria-hidden="true">
+      <button class="btn" id="btn-burst">Pesta!</button>
+      <button class="btn" id="btn-stop">Hentikan</button>
+      <button class="btn" id="btn-music">Putar Musik</button>
+    </div>
+
+    <canvas id="confetti"></canvas>
+  </div>
+
+<script>
+  // create and center candles
+  const candlesEl = document.getElementById('candles');
+  const candleCount = 5;
+  for(let i=0;i<candleCount;i++){
+    const c = document.createElement('div');
+    c.className = 'candle';
+    c.innerHTML = '<div class="stripe"></div><div class="flame"></div>';
+    candlesEl.appendChild(c);
+  }
+
+  // sprinkles jitter
+  document.querySelectorAll('.sprinkle').forEach(s=>{
+    s.animate([{transform:'translateY(0)'},{transform:'translateY(-3px)'}], {duration:2000+Math.random()*1200, iterations:Infinity, direction:'alternate'});
+  });
+
+  // card open/close
+  const card = document.getElementById('card');
+  let open = false;
+  card.addEventListener('click', ()=> {
+    open = !open;
+    card.classList.toggle('open', open);
+  });
+
+  // confetti canvas
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  let W = canvas.width = innerWidth;
+  let H = canvas.height = innerHeight;
+  window.addEventListener('resize', ()=>{ W=canvas.width=innerWidth; H=canvas.height=innerHeight });
+
+  const colors = ['#ffd166','#06d6a0','#118ab2','#ef476f','#9b5de5'];
+  const confetti = [];
+  function spawnConfetti(n=80){
+    for(let i=0;i<n;i++){
+      confetti.push({
+        x: Math.random()*W,
+        y: Math.random()*-H,
+        vx: -1 + Math.random()*2,
+        vy: 2 + Math.random()*3,
+        r: 6 + Math.random()*8,
+        color: colors[Math.floor(Math.random()*colors.length)],
+        rot: Math.random()*Math.PI*2,
+        vr: (Math.random()-0.5)*0.2
+      });
+    }
+  }
+  function updateConfetti(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=confetti.length-1;i>=0;i--){
+      const p = confetti[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.vr;
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*1.6);
+      ctx.restore();
+      if(p.y > H+50 || p.x < -50 || p.x > W+50) confetti.splice(i,1);
+    }
+    requestAnimationFrame(updateConfetti);
+  }
+  updateConfetti();
+
+  // controls
+  document.getElementById('btn-burst').addEventListener('click', ()=> {
+    spawnConfetti(160);
+    burstMiniBalloon(6);
+  });
+  document.getElementById('btn-stop').addEventListener('click', ()=> {
+    confetti.length = 0;
+    ctx.clearRect(0,0,W,H);
+  });
+
+  function burstMiniBalloon(count){
+    for(let i=0;i<count;i++){
+      const b = document.createElement('div');
+      b.className = 'balloon-mini';
+      b.style.position='absolute';
+      b.style.width='28px';
+      b.style.height='36px';
+      b.style.borderRadius='60% 60% 50% 50%';
+      b.style.left = (40 + Math.random()*60) + '%';
+      b.style.bottom = '20px';
+      b.style.background = colors[Math.floor(Math.random()*colors.length)];
+      b.style.zIndex = 60;
+      b.style.opacity = 0.95;
+      b.style.boxShadow='0 6px 12px rgba(0,0,0,0.12)';
+      document.body.appendChild(b);
+      const dur = 2200 + Math.random()*1800;
+      b.animate([{transform:'translateY(0) rotate(0)'},{transform:'translateY(-120vh) rotate(240deg)'}], {duration:dur, easing:'cubic-bezier(.2,.9,.2,1)'});
+      setTimeout(()=> b.remove(), dur+80);
+    }
+  }
+
+  // simple melody
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  let audioCtx = null;
+  function playMelody(){
+    if(!AudioCtx) return;
+    if(!audioCtx) audioCtx = new AudioCtx();
+    const t0 = audioCtx.currentTime;
+    const notes = [523, 587, 659, 523, 523, 587, 659, 523];
+    let time = 0;
+    notes.forEach((f,i)=>{
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.type = 'sine';
+      o.frequency.value = f;
+      g.gain.value = 0.06;
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(t0 + time);
+      o.stop(t0 + time + 0.16);
+      time += 0.18;
+    });
+  }
+  document.getElementById('btn-music').addEventListener('click', ()=> { playMelody(); spawnConfetti(90); });
+
+  // shortcuts
+  window.addEventListener('keydown', e=>{
+    if(e.code === 'Space'){ document.getElementById('btn-burst').click(); e.preventDefault(); }
+    if(e.key.toLowerCase() === 'm'){ document.getElementById('btn-music').click(); }
+  });
+
+  // cake bob animation
+  const cake = document.getElementById('cake');
+  cake.animate([{transform:'translateY(0)'},{transform:'translateY(-6px)'},{transform:'translateY(0)'}], {duration:3000, iterations:Infinity, easing:'ease-in-out'});
+
+  // initial subtle confetti
+  setTimeout(()=> spawnConfetti(40), 700);
+</script>
+</body>
+</html>

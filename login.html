@@ -8,7 +8,7 @@
 <body style="background: url(pexels-therato-1933320.jpg);">
     <div class="login-container">
         <div class="login-box">
-            <h2>Haiii Broo</h2>
+            <h2>Masukkan Password</h2>
             <form id="loginForm" onsubmit="return validatePassword()">
                 <input type="password" id="passwordInput" placeholder="Enter Password" required>
                 <button type="submit">Login</button>
@@ -19,7 +19,7 @@
     <script>
         function validatePassword() {
             const password = document.getElementById('passwordInput').value;
-            if (password === "220610") {
+            if (password === "afrapanji10") {
                 window.location.href = "beranda.html";
                 return false;
             } else {
