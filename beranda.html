@@ -1,10 +1,97 @@
 <html>
   <head>
-    <title>My First Website</title>
+    <title>Dashboard - Home</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Professional Loading Animation */
+      .page-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: loaderFadeOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+      }
+
+      @keyframes loaderFadeOut {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .loader-content {
+        text-align: center;
+        color: white;
+      }
+
+      .spinner {
+        width: 56px;
+        height: 56px;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: spinSmooth 1s linear infinite;
+        margin: 0 auto 24px;
+      }
+
+      @keyframes spinSmooth {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loader-text {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        animation: loaderPulse 1.6s ease-in-out infinite;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      @keyframes loaderPulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.6;
+        }
+      }
+    </style>
   </head>
-  <body style="background: url(bag.jpg)">
+  <body>
+    <!-- Animated Background -->
+    <div class="background-wrapper">
+      <div class="gradient-bg"></div>
+      <div class="floating-elements">
+        <div class="floating-blob blob-1"></div>
+        <div class="floating-blob blob-2"></div>
+        <div class="floating-blob blob-3"></div>
+      </div>
+      <div class="grid-pattern"></div>
+    </div>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="spinner"></div>
+        <div class="loader-text">Memuat</div>
+      </div>
+    </div>
+
     <div>
       <!-- NAVBAR -->
       <div class="container-navbar">
