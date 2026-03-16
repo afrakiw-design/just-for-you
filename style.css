@@ -1198,6 +1198,55 @@ a {
 .row-spotify {
   text-align: center;
 }
+
+/* Additional responsive styles for About page and general improvements */
+@media (max-width: 768px) {
+  .container {
+    width: 98%;
+    padding: 0 0.5rem;
+  }
+  .teks-utama {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .teks-about {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .teks-about-2 {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+  .ul-navbar2 {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .li-navbar2 {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teks-utama {
+    font-size: 1.8rem;
+  }
+  .teks-about {
+    font-size: 1.1rem;
+  }
+  .teks-about-2 {
+    font-size: 0.95rem;
+  }
+  .container {
+    width: 100%;
+    padding: 0 0.25rem;
+  }
+}
 .spotify-title {
   text-decoration: none;
   margin-top: 1rem;
